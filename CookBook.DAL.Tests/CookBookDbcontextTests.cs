@@ -11,12 +11,6 @@ namespace CookBook.DAL.Tests
         public CookBookDbContextTests(CookBookDbContextTestsClassSetupFixture testContext)
         {
             _testContext = testContext;
-            using (var dbx = _testContext.CreateCookBookDbContext())
-            {
-                dbx.Ingredients.RemoveRange(dbx.Ingredients);
-                dbx.Recipes.RemoveRange(dbx.Recipes);
-                dbx.SaveChanges();
-            }
         }
 
         private readonly CookBookDbContextTestsClassSetupFixture _testContext;
