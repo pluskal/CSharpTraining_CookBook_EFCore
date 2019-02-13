@@ -8,6 +8,10 @@ namespace CookBook.DAL
 {
     public class CookBookDbContext : DbContext
     {
+        public CookBookDbContext()
+        {
+            
+        }
         public CookBookDbContext(DbContextOptions<CookBookDbContext> contextOptions)
             :base(contextOptions)
         {
