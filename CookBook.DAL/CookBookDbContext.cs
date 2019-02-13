@@ -8,14 +8,18 @@ namespace CookBook.DAL
 {
     public class CookBookDbContext : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public CookBookDbContext(DbContextOptions<CookBookDbContext> contextOptions)
+            :base(contextOptions)
         {
-            optionsBuilder.UseSqlServer(
-@"Data Source=(LocalDB)\MSSQLLocalDB;
-                Initial Catalog = CookBook;
-                MultipleActiveResultSets = True;
-                Integrated Security = True; ");
         }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer(
+        //        @"Data Source=(LocalDB)\MSSQLLocalDB;
+        //        Initial Catalog = CookBook;
+        //        MultipleActiveResultSets = True;
+        //        Integrated Security = True; ");
+        //}
 
         public DbSet<RecipeEntity> Recipes { get; set; }
         public DbSet<IngredientEntity> Ingredients { get; set; }
