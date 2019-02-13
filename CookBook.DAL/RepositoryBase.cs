@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using CookBook.DAL.Interfaces;
 
@@ -32,5 +33,7 @@ namespace CookBook.DAL
         public TEntity Insert(TEntity entity) => _unitOfWork.DbContext.Set<TEntity>().Add(entity).Entity;
 
         public void Update(TEntity entity) => _unitOfWork.DbContext.Set<TEntity>().Update(entity);
+
+        public IEnumerable<TEntity> GetAll() => _unitOfWork.DbContext.Set<TEntity>().ToArray();
     }
 }

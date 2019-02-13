@@ -17,6 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CookBook.BL.DTOs\CookBook.BL.DTOs.csproj" />
+    <ProjectReference Include="..\CookBook.BL.Facades\CookBook.BL.Facades.csproj" />
     <ProjectReference Include="..\CookBook.DAL\CookBook.DAL.csproj" />
   </ItemGroup>
 
